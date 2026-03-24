@@ -37,8 +37,7 @@ export default function FeaturesPage() {
             <Link
               key={domain.slug}
               href={`/features/${domain.slug}`}
-              className="group reveal rounded-2xl border border-linen bg-off-white p-6 transition-all hover:border-honey/40 hover:shadow-lg hover:shadow-honey/5"
-              style={{ "--reveal-delay": `${i * 60}ms` } as React.CSSProperties}
+              className="group rounded-2xl border border-linen bg-off-white p-6 transition-all hover:border-honey/40 hover:shadow-lg hover:shadow-honey/5"
             >
               {/* Icon + label */}
               <div className="flex items-center gap-3">

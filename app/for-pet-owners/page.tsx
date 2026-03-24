@@ -92,8 +92,7 @@ export default function ForPetOwnersPage() {
           {benefits.map((benefit, i) => (
             <div
               key={benefit.title}
-              className="reveal rounded-2xl border border-linen bg-off-white p-6"
-              style={{ "--reveal-delay": `${i * 80}ms` } as React.CSSProperties}
+              className="rounded-2xl border border-linen bg-off-white p-6"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-honey/10 text-2xl">
                 {benefit.emoji}
@@ -135,8 +134,7 @@ export default function ForPetOwnersPage() {
           ].map((item, i) => (
             <div key={item.step} className="text-center">
               <div
-                className="reveal mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-chester-green text-lg font-bold text-white"
-                style={{ "--reveal-delay": `${i * 150}ms` } as React.CSSProperties}
+                className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-chester-green text-lg font-bold text-white"
               >
                 {item.step}
               </div>

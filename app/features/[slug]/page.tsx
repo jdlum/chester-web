@@ -106,8 +106,7 @@ export default async function FeatureDetailPage({
             {feature.fullFeatures.map((f, i) => (
               <li
                 key={f}
-                className="reveal flex items-start gap-3 text-sm text-deep-forest"
-                style={{ "--reveal-delay": `${i * 40}ms` } as React.CSSProperties}
+                className="flex items-start gap-3 text-sm text-deep-forest"
               >
                 <svg
                   className="mt-0.5 h-4 w-4 shrink-0 text-chester-green"

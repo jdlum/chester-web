@@ -182,8 +182,7 @@ export default function Home() {
             <div
               key={stat.label}
               data-reveal
-              className="reveal text-center rounded-2xl border border-linen bg-off-white p-8"
-              style={{ "--reveal-delay": `${i * 100}ms` } as React.CSSProperties}
+              className="text-center rounded-2xl border border-linen bg-off-white p-8"
             >
               <p className="font-heading text-4xl text-chester-green md:text-5xl">
                 {stat.value}
@@ -317,8 +316,7 @@ export default function Home() {
           ].map((item, i) => (
             <div
               key={item.title}
-              className="reveal rounded-2xl border border-linen bg-off-white p-6"
-              style={{ "--reveal-delay": `${i * 120}ms` } as React.CSSProperties}
+              className="rounded-2xl border border-linen bg-off-white p-6"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-chester-green/10 text-2xl">
                 {item.emoji}
@@ -377,8 +375,7 @@ export default function Home() {
           ].map((t, i) => (
             <div
               key={t.name}
-              className="reveal card-hover rounded-2xl border border-linen bg-off-white p-6"
-              style={{ "--reveal-delay": `${i * 120}ms` } as React.CSSProperties}
+              className="card-hover rounded-2xl border border-linen bg-off-white p-6"
             >
               <div className="mb-3 flex gap-0.5 text-honey">
                 {[1, 2, 3, 4, 5].map((s) => (
