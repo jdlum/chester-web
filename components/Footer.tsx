@@ -2,6 +2,7 @@ import Link from "next/link";
 
 const productLinks = [
   { href: "/features", label: "Features" },
+  { href: "/for-pet-owners", label: "For Pet Owners" },
   // { href: "/pricing", label: "Pricing" },  // Hidden until revenue model finalized
   { href: "/faq", label: "FAQ" },
 ];
@@ -21,8 +22,8 @@ export default function Footer() {
             <span className="font-heading text-2xl">Chester</span>
             <p className="mt-3 max-w-sm text-sm text-chester-green-mid">
               The all-in-one platform for independent pet service providers.
-              Booking, payments, messaging, and insights — so you can focus on
-              the dogs.
+              Booking, payments, report cards, GPS tracking, pet health, team
+              management, and insights — so you can focus on the dogs.
             </p>
           </div>
 

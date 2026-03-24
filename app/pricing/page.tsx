@@ -17,10 +17,12 @@ const tiers = [
     description: "Perfect for getting started as a solo provider.",
     features: [
       "Up to 10 active clients",
-      "Booking management",
-      "Real-time messaging",
-      "Basic report cards",
+      "Booking & schedule management",
+      "Real-time messaging with clients",
+      "Basic report cards (text observations)",
+      "Pet profiles with medical notes",
       "Push notifications",
+      "Client portal access for your clients",
       "Email support",
     ],
     highlighted: false,
@@ -33,11 +35,16 @@ const tiers = [
     description: "For established providers ready to grow.",
     features: [
       "Unlimited clients",
-      "Stripe Connect payments",
-      "Photo report cards with insights",
-      "Pet mood & energy tracking",
-      "Revenue dashboard",
-      "Team management (up to 3)",
+      "Stripe Connect payments & invoicing",
+      "Photo report cards with mood, energy & appetite tracking",
+      "GPS walk tracking with distance & routes",
+      "Pet Insights engine (trend analysis)",
+      "Vaccination & health document tracking",
+      "Revenue dashboard with period comparisons",
+      "Cancellation policies & automatic fee invoicing",
+      "Service agreements with e-signatures",
+      "Team management (up to 3 members)",
+      "Pay reports with CSV export",
       "Priority support",
     ],
     highlighted: true,
@@ -51,8 +58,11 @@ const tiers = [
     features: [
       "Everything in Professional",
       "Unlimited team members",
-      "Advanced analytics",
-      "Client agreements & compliance",
+      "10 granular role permissions",
+      "Custom report card templates per service type",
+      "Advanced analytics & reporting",
+      "Background check & insurance tracking",
+      "Grooming & training-specific observation fields",
       "Partner marketplace access",
       "Custom branding",
       "Dedicated account manager",
@@ -88,12 +98,21 @@ const pricingFaqs = [
     answer:
       "Your existing clients and data are never affected. You simply won't be able to add new clients until you upgrade to Professional or remove inactive clients.",
   },
+  {
+    question: "Does GPS tracking cost extra?",
+    answer:
+      "No. GPS walk tracking, distance computation, and route history are included in the Professional plan and above at no additional cost.",
+  },
+  {
+    question: "Can my team members have different roles?",
+    answer:
+      "Yes. On the Business plan, you get 10 granular permissions — control who can manage billing, create bookings, issue refunds, view insights, and more. Staff and contractor roles are supported.",
+  },
 ];
 
 export default function PricingPage() {
   return (
     <>
-      {/* Header */}
       <Section bg="green">
         <div className="text-center">
           <h1 className="text-4xl text-white sm:text-5xl">
@@ -105,7 +124,6 @@ export default function PricingPage() {
         </div>
       </Section>
 
-      {/* Pricing cards */}
       <Section>
         <div className="grid gap-8 md:grid-cols-3">
           {tiers.map((tier) => (
@@ -114,7 +132,6 @@ export default function PricingPage() {
         </div>
       </Section>
 
-      {/* Pricing FAQ */}
       <Section bg="parchment">
         <div className="mx-auto max-w-2xl">
           <h2 className="text-center text-3xl">Pricing Questions</h2>

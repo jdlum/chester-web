@@ -48,7 +48,37 @@ const providerFaqs = [
   {
     question: "Can I use Chester for different service types?",
     answer:
-      "Absolutely. Chester supports dog walking, pet sitting, training, grooming, and any other pet service. You define your service types and pricing.",
+      "Absolutely. Chester supports dog walking, pet sitting, training, grooming, and boarding. Each service type gets its own booking settings, report card templates, cancellation policies, and pay rates.",
+  },
+  {
+    question: "How does GPS walk tracking work?",
+    answer:
+      "When you start a walk, Chester tracks your route in real-time using your phone's GPS. Distance is computed automatically, and the route is attached to the report card when you finish. Weather context is captured at the start. Pet parents can see exactly where you went.",
+  },
+  {
+    question: "How do cancellation policies work?",
+    answer:
+      "You configure cancellation policies per service type. Set a free cancellation window (e.g., 24 hours before), a late cancellation fee (fixed or percentage), and a no-show fee. When a client cancels late or no-shows, Chester automatically generates a fee invoice. You can also waive fees with a reason on a case-by-case basis.",
+  },
+  {
+    question: "What's included in a report card?",
+    answer:
+      "Report cards include per-pet observations for mood, energy, appetite, and potty, plus a personal provider note, a highlight moment (used in push notifications), photos and videos, and optional internal notes only you can see. Grooming visits can include coat condition and products used. Training visits can include session progress and homework. Templates are configurable per service type.",
+  },
+  {
+    question: "Can I generate pay reports for my team?",
+    answer:
+      "Yes. On Professional and Business plans, you can generate pay reports for any date range. Reports show per-booking itemization with date, service type, client, duration, rate, and pay amount. Export to CSV for QuickBooks or Gusto.",
+  },
+  {
+    question: "How do service agreements work?",
+    answer:
+      "Create agreement templates per service type. When a client signs up, they review and e-sign the agreement from their phone. Chester tracks the signature, IP address, timestamp, and version. Agreements can expire and be re-signed as needed.",
+  },
+  {
+    question: "Can I reassign a booking to another team member?",
+    answer:
+      "Yes. If a staff member can't make a booking, you can reassign it to another team member with handoff notes so they have full context. The booking history tracks the reassignment.",
   },
 ];
 
@@ -76,7 +106,22 @@ const clientFaqs = [
   {
     question: "Can I manage multiple pets?",
     answer:
-      "Yes! Add as many pets as you need. Each pet gets its own profile with medical notes, behavior information, and visit history.",
+      "Yes! Add as many pets as you need. Each pet gets its own profile with medical notes, behavior information, vaccination tracking, vet info, and visit history.",
+  },
+  {
+    question: "Can I upload vaccination records?",
+    answer:
+      "Yes. Upload proof of vaccination documents directly from your phone. Your provider can review and approve them. Chester tracks due dates so you never miss a renewal.",
+  },
+  {
+    question: "Can I see where my dog walked?",
+    answer:
+      "Yes! If your provider uses GPS tracking during walks, you'll see the route, distance, and weather conditions attached to the report card. You can see exactly where they went.",
+  },
+  {
+    question: "What are pet insights?",
+    answer:
+      "Chester analyzes your pet's report card data over time to detect trends in mood, energy, appetite, and more. You'll see a summary of how your pet is doing across visits — improving, stable, or something to watch. It takes at least 5 visits before insights are generated.",
   },
 ];
 

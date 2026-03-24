@@ -29,6 +29,10 @@ const rows = [
     owner: { icon: "🎓", label: "Training", sublabel: "Obedience & behavior" },
     provider: { icon: "🏋️", label: "Trainers", sublabel: "Private & group sessions" },
   },
+  {
+    owner: { icon: "🏨", label: "Boarding", sublabel: "Extended stays & daycare" },
+    provider: { icon: "🏠", label: "Boarders", sublabel: "Daycare & overnight" },
+  },
 ];
 
 export default function MarketplaceHub() {

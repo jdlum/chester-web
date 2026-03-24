@@ -6,6 +6,7 @@ import Button from "./Button";
 
 const links = [
   { href: "/features", label: "Features" },
+  { href: "/for-pet-owners", label: "Pet Owners" },
   // { href: "/pricing", label: "Pricing" },  // Hidden until revenue model finalized
   { href: "/about", label: "About" },
   { href: "/faq", label: "FAQ" },
