@@ -30,12 +30,12 @@ const values = [
   {
     title: "Mobile Is the Product",
     description:
-      "Pet pros work on their feet, between walks, in the park. Chester is built phone-first — not a desktop app squeezed onto a small screen.",
+      "Pet pros work on their feet, between walks, in the park. Chester is built mobile-first — not a desktop app squeezed onto a small screen.",
   },
   {
-    title: "Every Touchpoint Earns Stickiness",
+    title: "Simplicity Is the Feature",
     description:
-      "Useful, then frictionless, then valuable, then sticky, then retained, then revenue. That's the sequence. Every feature follows it.",
+      "The best tool is the one you actually use. Chester is designed to get out of your way, so managing your business feels effortless, not like another job.",
   },
 ];
 
@@ -81,10 +81,7 @@ export default function AboutPage() {
                 Chester is a Shih-Poo with more personality than most people I know. He&apos;s my firstborn, my co-founder in spirit, and the entire reason this company exists.
               </p>
               <p>
-                When I got Chester, I did what any first-time dog parent does — I went all in. Dog walkers, groomers, trainers, sitters. I wanted the best for him, and I was willing to find it. But finding it was the problem.
-              </p>
-              <p>
-                Every provider used a different system. Bookings over text. Invoices via email. Updates through a mix of apps that never talked to each other. I was managing Chester&apos;s care across five platforms and a dozen message threads.
+                When I got Chester, I did what any first-time dog parent does: I went all in. Dog walkers, groomers, trainers, sitters. But every provider used a different system. Bookings over text. Invoices via email. Updates through a mix of apps that never talked to each other. I was managing Chester&apos;s care across five platforms and a dozen message threads.
               </p>
               <p className="font-medium text-deep-forest">
                 I thought: there has to be a better way.
@@ -124,13 +121,7 @@ export default function AboutPage() {
             <h2 className="text-3xl">From Dog Dad to Builder</h2>
             <div className="mt-5 space-y-4 text-slate leading-relaxed">
               <p>
-                I&apos;m Justin — I&apos;ve spent the last decade in tech, primarily in operational roles and software. I&apos;ve seen firsthand how the right tool can transform a workflow, and how the wrong one can make talented people feel like they&apos;re drowning in admin.
-              </p>
-              <p>
-                Through Chester, I got to know his walkers, his groomer, his trainer, and his sitter — not just as service providers, but as people who genuinely love what they do. They were incredible at their craft. But they were buried in logistics: scheduling conflicts, chasing payments, juggling client communications across half a dozen channels.
-              </p>
-              <p>
-                I realized the problem wasn&apos;t a lack of tools — it was that the tools weren&apos;t built for how these providers actually work. They&apos;re on their feet. They&apos;re between walks. They need something that works from their phone in under a minute, not a desktop dashboard designed for someone sitting at a desk.
+                I&apos;m Justin. I&apos;ve spent the last decade in tech, primarily in operational roles. Through Chester, I got to know his walkers, his groomer, his trainer, and his sitter as people who genuinely love what they do. They&apos;re incredible at their craft, but buried in logistics. And the tools they had weren&apos;t built for how they actually work: on their feet, between walks, needing something that runs from their phone in under a minute.
               </p>
               <p className="font-medium text-deep-forest">
                 So I built Chester — the platform I wished existed as a pet owner, designed for the providers I admire most.
@@ -179,13 +170,13 @@ export default function AboutPage() {
           <h2 className="text-3xl">Why This Matters</h2>
           <div className="mt-6 space-y-4 text-lg leading-relaxed text-slate">
             <p>
-              The pet care industry is booming — but the people who power it are underserved. They deserve tools that are as thoughtful, reliable, and beautiful as the care they provide.
+              The pet care industry is booming, but the people who power it are underserved. They deserve tools that are as thoughtful, reliable, and beautiful as the care they provide.
             </p>
             <p>
-              Chester is our attempt to build something people actually love to use — a platform that feels like it was made by someone who gets it, because it was. We&apos;re not trying to replace everything overnight. We&apos;re trying to earn the trust of one provider at a time.
+              Chester is our attempt to build something people actually love to use - a platform that feels like it was made by someone who gets it, because it was. We&apos;re not trying to replace everything overnight. We&apos;re trying to earn the trust of one provider at a time.
             </p>
             <p className="font-medium text-deep-forest text-xl">
-              We&apos;re building this in Toronto — and we&apos;re just getting started.
+              We&apos;re building this in Toronto, and we&apos;re just getting started.
             </p>
           </div>
         </div>
@@ -199,7 +190,7 @@ export default function AboutPage() {
             <span className="block text-honey">for Our Pets</span>
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-chester-green-mid">
-            Join the community of providers who chose a better tool —
+            Join the community of providers who chose a better tool -
             built by someone who knows their work from the other side of the leash.
           </p>
           <div className="mt-8">

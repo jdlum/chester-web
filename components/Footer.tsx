@@ -23,7 +23,7 @@ export default function Footer() {
             <p className="mt-3 max-w-sm text-sm text-chester-green-mid">
               The all-in-one platform for independent pet service providers.
               Booking, payments, report cards, GPS tracking, pet health, team
-              management, and insights — so you can focus on the dogs.
+              management, and insights — so you can focus on the pets and doing what you do best.
             </p>
           </div>
 
