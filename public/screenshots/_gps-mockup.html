@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=375, initial-scale=1">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: #FAFAF6;
+    width: 375px;
+    height: 812px;
+    overflow: hidden;
+  }
+
+  .header {
+    background: #2C3D28;
+    padding: 52px 20px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .back-btn {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 18px;
+  }
+  .header h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px; color: white; font-weight: 400;
+  }
+
+  .active-banner {
+    background: #C4783A;
+    padding: 10px 20px;
+    display: flex; align-items: center; justify-content: space-between;
+    color: white;
+  }
+  .active-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #4ADE80; margin-right: 8px;
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+  .active-left { display: flex; align-items: center; font-size: 13px; font-weight: 600; }
+  .active-time { font-size: 13px; font-weight: 700; }
+
+  .map-container {
+    width: 100%; height: 310px;
+    background: linear-gradient(135deg, #E8EDE6 0%, #d5ddd0 100%);
+    position: relative; overflow: hidden;
+  }
+  .map-container img { width: 100%; height: 100%; object-fit: cover; }
+  .map-fallback {
+    padding: 120px 40px; text-align: center; color: #7A8C6A; font-size: 14px;
+    display: none;
+  }
+  .map-fallback span { font-size: 40px; display: block; margin-bottom: 8px; }
+
+  .stats {
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px; padding: 16px 20px;
+  }
+  .stat-card {
+    background: white; border: 1px solid #D9D0BF;
+    border-radius: 14px; padding: 12px 10px; text-align: center;
+  }
+  .stat-icon { font-size: 20px; margin-bottom: 4px; }
+  .stat-value {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px; color: #1E2E1A;
+  }
+  .stat-label { font-size: 10px; color: #4A5E6E; margin-top: 2px; }
+
+  .pet-section { padding: 0 20px 12px; }
+  .pet-card {
+    background: white; border: 1px solid #D9D0BF;
+    border-radius: 14px; padding: 14px;
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 8px;
+  }
+  .pet-avatar {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: #E8D5F5;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+  .pet-avatar.blue { background: #D5E5F5; }
+  .pet-name { font-size: 14px; font-weight: 600; color: #1E2E1A; }
+  .pet-breed { font-size: 11px; color: #4A5E6E; }
+  .pet-status {
+    margin-left: auto;
+    background: #E8EDE6; border-radius: 20px;
+    padding: 4px 10px; font-size: 10px; font-weight: 600; color: #2C3D28;
+  }
+
+  .route-section { padding: 0 20px 12px; }
+  .route-card {
+    background: white; border: 1px solid #D9D0BF;
+    border-radius: 14px; padding: 14px;
+  }
+  .route-title { font-size: 13px; font-weight: 600; color: #1E2E1A; margin-bottom: 8px; }
+  .route-detail {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 12px; color: #4A5E6E; margin-bottom: 4px;
+  }
+
+  .bottom-nav {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: white; border-top: 1px solid #D9D0BF;
+    display: flex; justify-content: space-around;
+    padding: 8px 0 28px;
+  }
+  .nav-item { text-align: center; }
+  .nav-icon { font-size: 20px; }
+  .nav-label { font-size: 9px; color: #4A5E6E; margin-top: 2px; }
+  .nav-item.active .nav-label { color: #2C3D28; font-weight: 700; }
+  .nav-dot { width: 4px; height: 4px; border-radius: 50%; background: #2C3D28; margin: 2px auto 0; }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="back-btn">&#8249;</div>
+    <h1>Walk Tracker</h1>
+  </div>
+
+  <div class="active-banner">
+    <div class="active-left">
+      <div class="active-dot"></div>
+      Walk in Progress
+    </div>
+    <div class="active-time">32:14</div>
+  </div>
+
+  <!-- Map: SVG-rendered route map styled like a real map -->
+  <div class="map-container">
+    <svg viewBox="0 0 375 310" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+      <!-- Map background with park/street grid -->
+      <rect width="375" height="310" fill="#E8EDE6"/>
+
+      <!-- Park area (High Park) -->
+      <ellipse cx="190" cy="160" rx="140" ry="120" fill="#d4e2c8" opacity="0.7"/>
+      <ellipse cx="160" cy="140" rx="80" ry="60" fill="#c4d8b4" opacity="0.5"/>
+
+      <!-- Water feature (Grenadier Pond) -->
+      <ellipse cx="120" cy="180" rx="35" ry="50" fill="#b8d4e3" opacity="0.6"/>
+
+      <!-- Streets -->
+      <line x1="0" y1="20" x2="375" y2="20" stroke="#fff" stroke-width="6" opacity="0.8"/>
+      <line x1="0" y1="290" x2="375" y2="290" stroke="#fff" stroke-width="6" opacity="0.8"/>
+      <line x1="20" y1="0" x2="20" y2="310" stroke="#fff" stroke-width="4" opacity="0.6"/>
+      <line x1="355" y1="0" x2="355" y2="310" stroke="#fff" stroke-width="4" opacity="0.6"/>
+
+      <!-- Trail paths (light) -->
+      <path d="M80,60 Q120,80 150,100 Q180,120 200,160 Q220,200 250,220 Q280,240 300,250" stroke="#a8b8a0" stroke-width="2" fill="none" stroke-dasharray="4,4"/>
+      <path d="M100,200 Q130,180 160,170 Q190,160 210,140 Q230,120 260,110" stroke="#a8b8a0" stroke-width="2" fill="none" stroke-dasharray="4,4"/>
+
+      <!-- Walk route (bold, main feature) -->
+      <path d="M60,80 Q90,90 120,110 Q150,130 170,160 Q185,185 200,200 Q220,215 250,220 Q270,222 290,210 Q310,195 320,170 Q325,150 310,130 Q295,115 270,110 Q245,108 225,120 Q210,135 200,155" stroke="#2C3D28" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+      <!-- Start marker -->
+      <circle cx="60" cy="80" r="8" fill="#2C3D28"/>
+      <circle cx="60" cy="80" r="4" fill="white"/>
+      <text x="60" y="68" text-anchor="middle" font-size="9" font-weight="600" fill="#2C3D28" font-family="Plus Jakarta Sans, sans-serif">Start</text>
+
+      <!-- Current position (animated) -->
+      <circle cx="200" cy="155" r="12" fill="#C4783A" opacity="0.3">
+        <animate attributeName="r" values="12;18;12" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.3;0.1;0.3" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="200" cy="155" r="6" fill="#C4783A"/>
+      <circle cx="200" cy="155" r="3" fill="white"/>
+
+      <!-- Distance markers -->
+      <circle cx="120" cy="110" r="3" fill="#7A8C6A"/>
+      <text x="130" y="104" font-size="8" fill="#7A8C6A" font-family="Plus Jakarta Sans, sans-serif">1 km</text>
+      <circle cx="250" cy="220" r="3" fill="#7A8C6A"/>
+      <text x="260" y="214" font-size="8" fill="#7A8C6A" font-family="Plus Jakarta Sans, sans-serif">2 km</text>
+
+      <!-- Park label -->
+      <text x="190" y="268" text-anchor="middle" font-size="11" font-weight="600" fill="#7A8C6A" font-family="Plus Jakarta Sans, sans-serif" opacity="0.7">High Park</text>
+    </svg>
+  </div>
+
+  <div class="stats">
+    <div class="stat-card">
+      <div class="stat-icon">&#x1F4CF;</div>
+      <div class="stat-value">2.4</div>
+      <div class="stat-label">km walked</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">&#x23F1;&#xFE0F;</div>
+      <div class="stat-value">32</div>
+      <div class="stat-label">minutes</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">&#x1F324;&#xFE0F;</div>
+      <div class="stat-value">14&#176;</div>
+      <div class="stat-label">partly cloudy</div>
+    </div>
+  </div>
+
+  <div class="pet-section">
+    <div class="pet-card">
+      <div class="pet-avatar">&#x1F415;</div>
+      <div>
+        <div class="pet-name">Max</div>
+        <div class="pet-breed">Golden Retriever</div>
+      </div>
+      <div class="pet-status">Active</div>
+    </div>
+    <div class="pet-card">
+      <div class="pet-avatar blue">&#x1F415;</div>
+      <div>
+        <div class="pet-name">Luna</div>
+        <div class="pet-breed">Border Collie</div>
+      </div>
+      <div class="pet-status">Active</div>
+    </div>
+  </div>
+
+  <div class="route-section">
+    <div class="route-card">
+      <div class="route-title">Route Details</div>
+      <div class="route-detail">&#x1F4CD; High Park Loop, Toronto</div>
+      <div class="route-detail">&#x1F550; Started at 9:00 AM</div>
+      <div class="route-detail">&#x1F4CE; Will be saved to report card</div>
+    </div>
+  </div>
+
+  <div class="bottom-nav">
+    <div class="nav-item">
+      <div class="nav-icon">&#x1F3E0;</div>
+      <div class="nav-label">Today</div>
+    </div>
+    <div class="nav-item active">
+      <div class="nav-icon">&#x1F4C5;</div>
+      <div class="nav-label">Schedule</div>
+      <div class="nav-dot"></div>
+    </div>
+    <div class="nav-item">
+      <div class="nav-icon">&#x1F43E;</div>
+      <div class="nav-label">Clients</div>
+    </div>
+    <div class="nav-item">
+      <div class="nav-icon">&#x1F4B3;</div>
+      <div class="nav-label">Money</div>
+    </div>
+    <div class="nav-item">
+      <div class="nav-icon">&#x2022;&#x2022;&#x2022;</div>
+      <div class="nav-label">More</div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -4,7 +4,22 @@ import { notFound } from "next/navigation";
 import Section from "@/components/Section";
 import Button from "@/components/Button";
 import FeatureIcon from "@/components/FeatureIcon";
+import PhoneMockup from "@/components/PhoneMockup";
 import { featureDomains, getFeatureBySlug, getAllFeatureSlugs } from "@/lib/feature-data";
+
+/** Map feature slugs to screenshot paths */
+const featureScreenshots: Record<string, string> = {
+  "booking-scheduling": "/screenshots/schedule.png",
+  "cancellation-policies": "/screenshots/feat-cancellation.png",
+  "payments-invoicing": "/screenshots/billing.png",
+  "report-cards": "/screenshots/feat-report-cards.png",
+  "gps-tracking": "/screenshots/gps-tracking.png",
+  "pet-profiles-health": "/screenshots/health.png",
+  "team-management": "/screenshots/team.png",
+  "client-portal": "/screenshots/client-dashboard.png",
+  "messaging-notifications": "/screenshots/messages.png",
+  "insights-analytics": "/screenshots/insights.png",
+};
 
 /* ── Static params for SSG ── */
 export function generateStaticParams() {
@@ -91,6 +106,24 @@ export default async function FeatureDetailPage({
           </p>
         </div>
       </Section>
+
+      {/* See it in action — phone mockup */}
+      {featureScreenshots[slug] && (
+        <Section>
+          <div className="mx-auto flex max-w-lg flex-col items-center">
+            <h2 className="mb-8 text-center text-2xl sm:text-3xl">
+              See It in Action
+            </h2>
+            <PhoneMockup
+              src={featureScreenshots[slug]}
+              alt={`${feature.label} screenshot`}
+              size="lg"
+              animate={false}
+              glow={false}
+            />
+          </div>
+        </Section>
+      )}
 
       {/* Full feature list */}
       <Section>

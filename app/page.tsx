@@ -141,7 +141,7 @@ export default function Home() {
             </div>
 
             <div className="hero-animate hero-animate-5 flex justify-center md:justify-end">
-              <PhoneMockup />
+              <PhoneMockup src="/screenshots/dashboard.png" alt="Chester provider dashboard" />
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import PhoneMockup from "./PhoneMockup";
 
 const features = [
   {
@@ -15,15 +16,7 @@ const features = [
       "Group walk cohorts",
       "Cancellation enforcement",
     ],
-    screen: {
-      header: "Schedule",
-      items: [
-        { time: "9:00 AM", name: "Bella & Max", type: "Group Walk", status: "confirmed" },
-        { time: "11:30 AM", name: "Luna", type: "Solo Walk", status: "pending" },
-        { time: "2:00 PM", name: "Cooper", type: "Training", status: "confirmed" },
-        { time: "4:30 PM", name: "Daisy & Rosie", type: "Group Walk", status: "confirmed" },
-      ],
-    },
+    screenshot: "/screenshots/schedule.png",
   },
   {
     id: "payments",
@@ -37,15 +30,7 @@ const features = [
       "Revenue dashboard",
       "Tax tracking (HST, GST)",
     ],
-    screen: {
-      header: "Billing",
-      items: [
-        { time: "Today", name: "Sarah K.", type: "$85.00 · Walk", status: "paid" },
-        { time: "Today", name: "Mike R.", type: "$120.00 · Grooming", status: "paid" },
-        { time: "Yesterday", name: "Lisa T.", type: "$45.00 · Walk", status: "pending" },
-        { time: "Mar 20", name: "Anna M.", type: "$90.00 · Training", status: "paid" },
-      ],
-    },
+    screenshot: "/screenshots/billing.png",
   },
   {
     id: "report-cards",
@@ -59,15 +44,7 @@ const features = [
       "Scheduled delivery",
       "Grooming & training fields",
     ],
-    screen: {
-      header: "Report Card",
-      items: [
-        { time: "Great", name: "Bella · Mood", type: "Happy & playful today", status: "up" },
-        { time: "4/5", name: "Bella · Energy", type: "Very active on walk", status: "up" },
-        { time: "Normal", name: "Bella · Appetite", type: "Ate full meal", status: "stable" },
-        { time: "✓", name: "Bella · Potty", type: "Normal consistency", status: "stable" },
-      ],
-    },
+    screenshot: "/screenshots/report-card.png",
   },
   {
     id: "gps",
@@ -81,15 +58,7 @@ const features = [
       "Weather context captured",
       "Route stored with report card",
     ],
-    screen: {
-      header: "Walk Tracker",
-      items: [
-        { time: "Active", name: "Bella & Max", type: "Group Walk · 2.4 km", status: "confirmed" },
-        { time: "32 min", name: "Duration", type: "Started 9:00 AM", status: "stable" },
-        { time: "14°C", name: "Weather", type: "Partly cloudy", status: "stable" },
-        { time: "Route", name: "High Park Loop", type: "Saved to report card", status: "up" },
-      ],
-    },
+    screenshot: "/screenshots/gps-tracking.png",
   },
   {
     id: "pets",
@@ -103,15 +72,7 @@ const features = [
       "Grooming & training profiles",
       "Document approval workflow",
     ],
-    screen: {
-      header: "Pet Profile",
-      items: [
-        { time: "Current", name: "Rabies", type: "Due: Sep 2026", status: "up" },
-        { time: "Current", name: "Bordetella", type: "Due: Jun 2026", status: "up" },
-        { time: "Expiring", name: "DHPP", type: "Due: Apr 2026", status: "pending" },
-        { time: "On file", name: "Vet: Dr. Patel", type: "Happy Paws Clinic", status: "stable" },
-      ],
-    },
+    screenshot: "/screenshots/health.png",
   },
   {
     id: "team",
@@ -125,15 +86,7 @@ const features = [
       "Pay reports with CSV export",
       "Background check tracking",
     ],
-    screen: {
-      header: "Team",
-      items: [
-        { time: "Owner", name: "Alex D.", type: "All permissions", status: "confirmed" },
-        { time: "Staff", name: "Jordan L.", type: "$22/hr · Walking", status: "confirmed" },
-        { time: "Staff", name: "Sam T.", type: "$25/hr · Training", status: "confirmed" },
-        { time: "Contractor", name: "Riley M.", type: "$30/session · Grooming", status: "pending" },
-      ],
-    },
+    screenshot: "/screenshots/team.png",
   },
   {
     id: "messaging",
@@ -147,15 +100,7 @@ const features = [
       "Unread counters",
       "Per-type preferences",
     ],
-    screen: {
-      header: "Messages",
-      items: [
-        { time: "Just now", name: "Sarah K.", type: "How was Bella today?", status: "unread" },
-        { time: "1h ago", name: "Mike R.", type: "Thanks for the report card!", status: "read" },
-        { time: "2h ago", name: "Lisa T.", type: "Can we reschedule Friday?", status: "read" },
-        { time: "Yesterday", name: "Anna M.", type: "Luna loved the walk!", status: "read" },
-      ],
-    },
+    screenshot: "/screenshots/messages.png",
   },
   {
     id: "insights",
@@ -169,28 +114,9 @@ const features = [
       "Provider pre-session briefing",
       "Dashboard metrics",
     ],
-    screen: {
-      header: "Pet Insights",
-      items: [
-        { time: "Improving", name: "Bella", type: "Energy: High ↑", status: "up" },
-        { time: "Stable", name: "Max", type: "Mood: Happy →", status: "stable" },
-        { time: "Watch", name: "Luna", type: "Appetite: Low ↓", status: "down" },
-        { time: "Improving", name: "Cooper", type: "Training: Engaged ↑", status: "up" },
-      ],
-    },
+    screenshot: "/screenshots/insights.png",
   },
 ];
-
-const statusColors: Record<string, string> = {
-  confirmed: "bg-chester-green/15 text-chester-green",
-  pending: "bg-honey/15 text-honey",
-  paid: "bg-chester-green/15 text-chester-green",
-  unread: "bg-honey/15 text-honey",
-  read: "bg-slate/10 text-slate",
-  up: "bg-chester-green/15 text-chester-green",
-  stable: "bg-slate/10 text-slate",
-  down: "bg-red-100 text-red-700",
-};
 
 export default function FeatureTabs() {
   const [active, setActive] = useState(0);
@@ -247,70 +173,16 @@ export default function FeatureTabs() {
           </ul>
         </div>
 
-        {/* Animated phone screen */}
-        <div className="flex justify-center">
-          <div className="relative">
-            <div className="glow-pulse absolute -inset-6 rounded-[3rem] bg-honey/15 blur-2xl" />
-
-            <div className="relative w-[280px] rounded-[2.5rem] border-[6px] border-deep-forest/90 bg-deep-forest shadow-2xl">
-              <div className="absolute left-1/2 top-2 z-10 h-6 w-24 -translate-x-1/2 rounded-full bg-deep-forest" />
-
-              <div className="overflow-hidden rounded-[2rem] bg-off-white">
-                <div className="px-4 pb-5 pt-10">
-                  <div className="mb-4">
-                    <p className="font-heading text-base text-deep-forest">
-                      {feat.screen.header}
-                    </p>
-                  </div>
-
-                  <div key={feat.id + "-items"} className="space-y-2">
-                    {feat.screen.items.map((item, idx) => (
-                      <div
-                        key={item.name + idx}
-                        className="flex items-center justify-between rounded-xl border border-linen bg-white p-3 animate-[hero-slide-up_0.4s_cubic-bezier(0.16,1,0.3,1)_forwards] opacity-0"
-                        style={{ animationDelay: `${idx * 80 + 100}ms` }}
-                      >
-                        <div>
-                          <p className="text-[11px] font-semibold text-deep-forest">
-                            {item.name}
-                          </p>
-                          <p className="text-[9px] text-slate">{item.type}</p>
-                        </div>
-                        <span
-                          className={`rounded-full px-2 py-0.5 text-[8px] font-semibold ${
-                            statusColors[item.status] || "bg-slate/10 text-slate"
-                          }`}
-                        >
-                          {item.time}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Bottom nav — show first 4 tabs */}
-                  <div className="mt-4 flex items-center justify-around rounded-xl bg-chester-green-surface px-2 py-2">
-                    {features.slice(0, 4).map((f, i) => (
-                      <div
-                        key={f.id}
-                        className={`text-center ${
-                          i === (active < 4 ? active : -1) ? "text-chester-green" : "text-slate/40"
-                        }`}
-                      >
-                        <div
-                          className={`mx-auto mb-0.5 h-4 w-4 rounded-md ${
-                            i === (active < 4 ? active : -1) ? "bg-chester-green/20" : ""
-                          }`}
-                        />
-                        <p className="text-[7px] font-medium">{f.label}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              <div className="absolute bottom-1.5 left-1/2 h-1 w-16 -translate-x-1/2 rounded-full bg-white/40" />
-            </div>
-          </div>
+        {/* Phone mockup with real screenshot */}
+        <div
+          key={feat.id + "-phone"}
+          className="flex justify-center animate-[hero-slide-up_0.5s_cubic-bezier(0.16,1,0.3,1)_forwards]"
+        >
+          <PhoneMockup
+            src={feat.screenshot}
+            alt={`${feat.label} screen`}
+            animate={false}
+          />
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Section from "@/components/Section";
 import Button from "@/components/Button";
+import PhoneMockup from "@/components/PhoneMockup";
 
 export const metadata: Metadata = {
   title: "For Pet Owners",
@@ -142,6 +143,32 @@ export default function ForPetOwnersPage() {
               <p className="mt-2 text-sm text-slate">{item.description}</p>
             </div>
           ))}
+        </div>
+      </Section>
+
+      {/* App showcase */}
+      <Section>
+        <div className="text-center">
+          <h2 className="text-3xl sm:text-4xl">
+            See What You Get
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-slate">
+            A beautiful app designed around your pet&apos;s care.
+          </p>
+        </div>
+        <div className="mx-auto mt-12 grid max-w-4xl justify-items-center gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="text-center">
+            <PhoneMockup src="/screenshots/client-dashboard.png" alt="Your dashboard" size="sm" animate={false} glow={false} />
+            <p className="mt-4 font-heading text-sm text-deep-forest">Your Dashboard</p>
+          </div>
+          <div className="text-center">
+            <PhoneMockup src="/screenshots/client-booking.png" alt="Book a service" size="sm" animate={false} glow={false} />
+            <p className="mt-4 font-heading text-sm text-deep-forest">Book a Service</p>
+          </div>
+          <div className="text-center">
+            <PhoneMockup src="/screenshots/client-payments.png" alt="Pay invoices" size="sm" animate={false} glow={false} />
+            <p className="mt-4 font-heading text-sm text-deep-forest">Pay Invoices</p>
+          </div>
         </div>
       </Section>
 
