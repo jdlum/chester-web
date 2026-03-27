@@ -9,7 +9,7 @@ const links = [
   { href: "/for-pet-owners", label: "Pet Owners" },
   // { href: "/pricing", label: "Pricing" },  // Hidden until revenue model finalized
   { href: "/about", label: "About" },
-  { href: "/faq", label: "FAQ" },
+  // { href: "/faq", label: "FAQ" },  // Hidden until FAQ content finalized
   { href: "/contact", label: "Contact" },
 ];
 

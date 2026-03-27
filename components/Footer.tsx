@@ -4,7 +4,7 @@ const productLinks = [
   { href: "/features", label: "Features" },
   { href: "/for-pet-owners", label: "For Pet Owners" },
   // { href: "/pricing", label: "Pricing" },  // Hidden until revenue model finalized
-  { href: "/faq", label: "FAQ" },
+  // { href: "/faq", label: "FAQ" },  // Hidden until FAQ content finalized
 ];
 
 const companyLinks = [
