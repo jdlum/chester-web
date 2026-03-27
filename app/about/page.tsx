@@ -19,6 +19,7 @@ const PHOTOS = {
   chesterPuppy: "/chester/chester-puppy.jpg",       // Puppy Chester by cabinet
   chesterPark2: "/chester/chester-park-2.jpg",      // Chester at park, tongue out
   chesterSmile: "/chester/chester-smile.jpg",       // Chester close-up, big smile
+  chesterAndFriend: "/chester/chester-and-friend.jpg", // Chester and his buddy on the couch
 };
 
 const values = [
@@ -97,7 +98,7 @@ export default function AboutPage() {
           {[
             { src: PHOTOS.chesterPark1, alt: "Chester enjoying a sunny day at the park", pos: "object-center" },
             { src: PHOTOS.chesterPuppy, alt: "Chester as a puppy — the early days", pos: "object-center" },
-            { src: PHOTOS.chesterSmile, alt: "Chester's signature smile", pos: "object-top" },
+            { src: PHOTOS.chesterAndFriend, alt: "Chester and his buddy hanging out together", pos: "object-[50%_30%]" },
           ].map((img) => (
             <div key={img.alt} className="relative h-48 overflow-hidden rounded-2xl sm:h-56">
               <Image
