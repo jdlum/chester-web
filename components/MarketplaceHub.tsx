@@ -69,7 +69,7 @@ export default function MarketplaceHub() {
             Pet Owners
           </span>
           <p className="mt-2 text-sm text-slate">
-            Find everything your pet needs
+            Stay connected to your provider
           </p>
         </div>
         {/* Spacer for center column — hidden on mobile */}
@@ -190,7 +190,7 @@ export default function MarketplaceHub() {
           One platform. Both sides of the relationship.
         </p>
         <p className="mt-1 text-xs text-slate">
-          Pet owners find their perfect provider. Providers grow their business. Chester makes it seamless.
+          Pet owners stay connected to the provider they already trust. Providers manage every client relationship from one place.
         </p>
       </div>
     </div>

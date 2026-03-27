@@ -21,9 +21,9 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <span className="font-heading text-2xl">Chester</span>
             <p className="mt-3 max-w-sm text-sm text-chester-green-mid">
-              The all-in-one platform for independent pet service providers.
+              The all-in-one platform for independent pet care professionals.
               Booking, payments, report cards, GPS tracking, pet health, team
-              management, and insights — so you can focus on the pets and doing what you do best.
+              management, and insights — so you can focus on the care.
             </p>
           </div>
 

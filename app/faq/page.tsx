@@ -33,7 +33,7 @@ const providerFaqs = [
   {
     question: "Can I manage a team?",
     answer:
-      "Yes! The Professional plan supports up to 3 team members, and the Business plan supports unlimited. Assign roles, distribute bookings, and manage your team from one dashboard.",
+      "Yes. The Professional plan supports up to 3 team members, and the Business plan supports unlimited. Assign roles, distribute bookings, and manage your team from one dashboard.",
   },
   {
     question: "What are report cards?",
@@ -48,7 +48,7 @@ const providerFaqs = [
   {
     question: "Can I use Chester for different service types?",
     answer:
-      "Absolutely. Chester supports dog walking, pet sitting, training, grooming, and boarding. Each service type gets its own booking settings, report card templates, cancellation policies, and pay rates.",
+      "Yes. Chester supports dog walking, pet sitting, training, grooming, and boarding. Each service type gets its own booking settings, report card templates, cancellation policies, and pay rates.",
   },
   {
     question: "How does GPS walk tracking work?",
@@ -106,7 +106,7 @@ const clientFaqs = [
   {
     question: "Can I manage multiple pets?",
     answer:
-      "Yes! Add as many pets as you need. Each pet gets its own profile with medical notes, behavior information, vaccination tracking, vet info, and visit history.",
+      "Yes. Add as many pets as you need. Each pet gets its own profile with medical notes, behavior information, vaccination tracking, vet info, and visit history.",
   },
   {
     question: "Can I upload vaccination records?",
@@ -116,7 +116,7 @@ const clientFaqs = [
   {
     question: "Can I see where my dog walked?",
     answer:
-      "Yes! If your provider uses GPS tracking during walks, you'll see the route, distance, and weather conditions attached to the report card. You can see exactly where they went.",
+      "Yes. If your provider uses GPS tracking during walks, you'll see the route, distance, and weather conditions attached to the report card. You can see exactly where they went.",
   },
   {
     question: "What are pet insights?",

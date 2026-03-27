@@ -335,8 +335,8 @@ export default function Home() {
         <div className="text-center">
           <h2 className="text-3xl sm:text-4xl">Two Portals, One Platform</h2>
           <p className="mx-auto mt-4 max-w-xl text-slate">
-            Chester connects pet owners with the providers they need —
-            and gives providers a single place to manage their entire business.
+            Chester connects providers and their clients in one shared
+            platform — giving both sides everything they need in one place.
           </p>
         </div>
         <div className="mt-10">
@@ -412,8 +412,8 @@ export default function Home() {
       <Section bg="green" animate="scale">
         <div className="text-center">
           <h2 className="text-3xl text-white sm:text-4xl lg:text-5xl">
-            Ready to Simplify Your
-            <span className="block text-honey">Pet Care Business?</span>
+            Ready to Run Your Business
+            <span className="block text-honey">Better?</span>
           </h2>
           <p className="mx-auto mt-6 max-w-lg text-chester-green-mid">
             Join hundreds of pet professionals who spend less time on admin and

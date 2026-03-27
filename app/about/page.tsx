@@ -192,7 +192,7 @@ export default function AboutPage() {
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-chester-green-mid">
             Join the community of providers who chose a better tool -
-            built by someone who knows their work from the other side of the leash.
+            built by someone who watched them work, and decided to fix what got in their way.
           </p>
           <div className="mt-8">
             <Button href="/contact" variant="secondary" size="lg">

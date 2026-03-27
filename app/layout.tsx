@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s | Chester",
   },
   description:
-    "The all-in-one platform for independent pet service providers. Booking, payments, messaging, and insights — so you can focus on the dogs.",
+    "The all-in-one platform for independent pet care professionals. Booking, payments, messaging, and insights — so you can focus on the care.",
 };
 
 export default function RootLayout({
