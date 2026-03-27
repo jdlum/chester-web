@@ -98,7 +98,7 @@ export default function AboutPage() {
           {[
             { src: PHOTOS.chesterPark1, alt: "Chester enjoying a sunny day at the park", pos: "object-center" },
             { src: PHOTOS.chesterPuppy, alt: "Chester as a puppy — the early days", pos: "object-center" },
-            { src: PHOTOS.chesterAndFriend, alt: "Chester and his buddy hanging out together", pos: "object-[50%_30%]" },
+            { src: PHOTOS.chesterAndFriend, alt: "Chester and his buddy hanging out together", pos: "object-[50%_58%]" },
           ].map((img) => (
             <div key={img.alt} className="relative h-48 overflow-hidden rounded-2xl sm:h-56">
               <Image
